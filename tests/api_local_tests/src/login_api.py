@@ -31,10 +31,10 @@ def login(username: str, password: str) -> str:
 def get_secret(auth: str) -> str:
     for user in users:
         if user.auth == auth and user.active == True:
-            if user.username == "bob":
-                raise Exception(
-                    "Super, objevil jsi chybu ;) - API vrací neznámou chybu"
-                )
+            # if user.username == "bob":
+            #     raise Exception(
+            #         "Super, objevil jsi chybu ;) - API vrací neznámou chybu"
+            #     )
             return user.secret
         elif (
             user.auth == auth and user.username == "joe" and joe_should_been_logged_out
@@ -42,14 +42,23 @@ def get_secret(auth: str) -> str:
             return "Super, objevil jsi chybu - dostal jsi tajemství Joa, ačkoliv se odhlásil"
     raise ValueError("Neplatný token")
 
+# def logout(auth: str) -> None:
+#     for user in users:
+#         if user.auth == auth and user.active == True:
+#             if user.username == "joe":
+#                 global joe_should_been_logged_out
+#                 joe_should_been_logged_out = True
+#             else:
+#                 user.active = False
+
 def logout(auth: str) -> None:
     for user in users:
-        if user.auth == auth and user.active == True:
-            if user.username == "joe":
-                global joe_should_been_logged_out
-                joe_should_been_logged_out = True
-            else:
-                user.active = False
+        if user.auth == auth:
+            if not user.active:
+                raise ValueError("Uživatel je již odhlášen")
+            user.active = False
+            return
+    raise ValueError("Neplatný token")
 
 
 
