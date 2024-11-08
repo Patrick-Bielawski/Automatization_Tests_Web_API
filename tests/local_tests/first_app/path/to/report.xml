@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="0.140" timestamp="2024-11-08T15:07:26.097099+01:00" hostname="DESKTOP-DA8316L"><testcase classname="tests.test_calculator" name="test_add" time="0.002" /><testcase classname="tests.test_calculator" name="test_substrack" time="0.001" /><testcase classname="tests.test_calculator" name="test_add_wrong" time="0.001"><failure message="assert 13 == 8&#10; +  where 13 = &lt;function add_wrong at 0x0000023C98B61760&gt;(5, 3)&#10; +    where &lt;function add_wrong at 0x0000023C98B61760&gt; = calculator.add_wrong">def test_add_wrong():
+&gt;       assert calculator.add_wrong(5, 3) == 8
+E       assert 13 == 8
+E        +  where 13 = &lt;function add_wrong at 0x0000023C98B61760&gt;(5, 3)
+E        +    where &lt;function add_wrong at 0x0000023C98B61760&gt; = calculator.add_wrong
+
+tests\test_calculator.py:12: AssertionError</failure></testcase><testcase classname="tests.test_calculator" name="test_multiply" time="0.001" /><testcase classname="tests.test_calculator" name="test_multiply_wrong" time="0.001"><failure message="assert 3 == 4&#10; +  where 3 = &lt;function multiply_wrong at 0x0000023C98B61940&gt;(2, 2)&#10; +    where &lt;function multiply_wrong at 0x0000023C98B61940&gt; = calculator.multiply_wrong">def test_multiply_wrong():
+&gt;       assert calculator.multiply_wrong(2, 2) == 4
+E       assert 3 == 4
+E        +  where 3 = &lt;function multiply_wrong at 0x0000023C98B61940&gt;(2, 2)
+E        +    where &lt;function multiply_wrong at 0x0000023C98B61940&gt; = calculator.multiply_wrong
+
+tests\test_calculator.py:18: AssertionError</failure></testcase></testsuite></testsuites>
