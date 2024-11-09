@@ -1,5 +1,8 @@
 # Kalkulačka pro testování
+import math
 
+
+# Funkce kalkulačky
 def add(a, b):
     return a + b
 
@@ -19,6 +22,19 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero!")
     return a / b
+
+
+# Logování kalkulačky
+def log(a, b):
+    if a <= 0:
+        raise ValueError("Cannot take log of non_positive number!")
+    if b <= 0:
+        raise ZeroDivisionError("Cannot take log with non-positive base!")
+    if b == 1:
+        raise NameError("Cannot take log with base 1!")
+    return math.log(a, b)
+
+
 
 
 
